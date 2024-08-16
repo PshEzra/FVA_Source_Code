@@ -1,0 +1,35 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cu0mqbaaav1kb"]
+
+[ext_resource type="Texture2D" uid="uid://bnno2o3p1qybe" path="res://assets/conveyor.png" id="1_h5kgk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6r82m"]
+texture = ExtResource("1_h5kgk")
+texture_region_size = Vector2i(128, 128)
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/0 = 0
+0:1/animation_columns = 4
+0:1/animation_frame_0/duration = 0.1
+0:1/animation_frame_1/duration = 0.1
+0:1/animation_frame_2/duration = 0.1
+0:1/animation_frame_3/duration = 0.1
+0:1/0 = 0
+0:2/animation_columns = 4
+0:2/animation_frame_0/duration = 0.1
+0:2/animation_frame_1/duration = 0.1
+0:2/animation_frame_2/duration = 0.1
+0:2/animation_frame_3/duration = 0.1
+0:2/0 = 0
+0:3/animation_columns = 4
+0:3/animation_frame_0/duration = 0.1
+0:3/animation_frame_1/duration = 0.1
+0:3/animation_frame_2/duration = 0.1
+0:3/animation_frame_3/duration = 0.1
+0:3/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_6r82m")

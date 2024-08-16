@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bam31ascf1niw"]
+
+[ext_resource type="PackedScene" uid="uid://bs0cfbjrdfmq7" path="res://game_world.tscn" id="1_o3aed"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 656.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
+layout_mode = 0
+offset_left = -1179.0
+offset_top = -720.0
+offset_right = 1821.0
+offset_bottom = 2280.0
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(3000, 2000)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Control/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.33, 0.33)
+
+[node name="GameWorld" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("1_o3aed")]

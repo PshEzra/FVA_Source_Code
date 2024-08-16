@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://6s1wgbpq5a7d"]
+
+[ext_resource type="Script" path="res://conveyor_item.gd" id="1_eip1h"]
+[ext_resource type="Texture2D" uid="uid://dd2tafwp8vgh0" path="res://assets/Funny Images/goblin sightings.png" id="2_d3ms2"]
+[ext_resource type="Texture2D" uid="uid://dkirtpew7basc" path="res://assets/Funny Images/Saul Bueno.png" id="3_uuai5"]
+[ext_resource type="Texture2D" uid="uid://kxg61rl6vxu2" path="res://assets/Funny Images/sillicat.png" id="4_kaog3"]
+[ext_resource type="Texture2D" uid="uid://df7piriqclvul" path="res://assets/Funny Images/weezer.png" id="5_y8o3a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ga6cc"]
+radius = 49.163
+
+[node name="thought" type="RigidBody2D" node_paths=PackedStringArray("images")]
+mass = 0.1
+gravity_scale = 0.0
+script = ExtResource("1_eip1h")
+is_funny = true
+images = [NodePath("Icon"), NodePath("SaulBueno"), NodePath("Sillicat"), NodePath("Weezer")]
+
+[node name="GoblinSightings" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.227451)
+position = Vector2(11, 9)
+texture = ExtResource("2_d3ms2")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_d3ms2")
+
+[node name="SaulBueno" type="Sprite2D" parent="."]
+texture = ExtResource("3_uuai5")
+
+[node name="Sillicat" type="Sprite2D" parent="."]
+texture = ExtResource("4_kaog3")
+
+[node name="Weezer" type="Sprite2D" parent="."]
+texture = ExtResource("5_y8o3a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ga6cc")

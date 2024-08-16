@@ -1,0 +1,389 @@
+[gd_scene load_steps=63 format=3 uid="uid://bs0cfbjrdfmq7"]
+
+[ext_resource type="Texture2D" uid="uid://d13b1rwfy4def" path="res://icon.svg" id="1_et34b"]
+[ext_resource type="PackedScene" uid="uid://cnhl4b345xsv3" path="res://player.tscn" id="1_qcx2g"]
+[ext_resource type="PackedScene" uid="uid://brccvvd6ax2lg" path="res://bob.tscn" id="2_7hg7o"]
+[ext_resource type="Texture2D" uid="uid://ec6w73olnslg" path="res://assets/bg.jpg" id="2_b50h3"]
+[ext_resource type="Script" path="res://conveyor.gd" id="3_kyexl"]
+[ext_resource type="PackedScene" uid="uid://6s1wgbpq5a7d" path="res://funny.tscn" id="4_hpl2t"]
+[ext_resource type="Script" path="res://spawning.gd" id="5_obxhx"]
+[ext_resource type="PackedScene" uid="uid://dbbe373qg08jk" path="res://not_funny.tscn" id="6_8o70i"]
+[ext_resource type="Script" path="res://box_end.gd" id="7_t8002"]
+[ext_resource type="Script" path="res://GameManager.gd" id="8_i4vhg"]
+[ext_resource type="TileSet" uid="uid://cu0mqbaaav1kb" path="res://conveyor_tiles.tres" id="9_irh8n"]
+[ext_resource type="Texture2D" uid="uid://c3yha5ctgif45" path="res://assets/Show.png" id="10_3lv3n"]
+[ext_resource type="Texture2D" uid="uid://bowfm6yfa4ajh" path="res://assets/Trash.png" id="11_dk85m"]
+[ext_resource type="AudioStream" uid="uid://beiygs6yilikm" path="res://assets/audio/scan.wav" id="12_08kn3"]
+[ext_resource type="Texture2D" uid="uid://cghancsjectg3" path="res://assets/boreman.png" id="12_muasl"]
+[ext_resource type="Script" path="res://Boreman_anim.gd" id="14_qxhd0"]
+[ext_resource type="Texture2D" uid="uid://yojir4otjt42" path="res://assets/Picking Up Phone/pickup_0000.png" id="14_t0qnh"]
+[ext_resource type="Texture2D" uid="uid://leyec7mtodst" path="res://assets/Picking Up Phone/pickup_0003.png" id="15_hlym8"]
+[ext_resource type="Texture2D" uid="uid://c62dugcrwgyvy" path="res://assets/Picking Up Phone/pickup_0007.png" id="16_b8fgt"]
+[ext_resource type="Texture2D" uid="uid://qqhqi5debxpi" path="res://assets/Picking Up Phone/pickup_0009.png" id="17_bl6hp"]
+[ext_resource type="Texture2D" uid="uid://dw06jh0bcwmpb" path="res://assets/boreman_light_0.png" id="18_31at2"]
+[ext_resource type="Texture2D" uid="uid://rwpt703v8foj" path="res://assets/boreman_light_1.png" id="19_fkr4p"]
+[ext_resource type="Texture2D" uid="uid://dmxkb5auuo3lf" path="res://assets/laughin/laughin_0000.png" id="20_t1cic"]
+[ext_resource type="Texture2D" uid="uid://cqvbi7u6rygqa" path="res://assets/laughin/laughin_0002.png" id="21_kprov"]
+[ext_resource type="Texture2D" uid="uid://ce3tywgfb01gh" path="res://assets/laughin/laughin_0004.png" id="22_qlitr"]
+[ext_resource type="Texture2D" uid="uid://cq8ko31k5lw1q" path="res://assets/laughin/laughin_0006.png" id="23_dsuho"]
+[ext_resource type="Texture2D" uid="uid://w83lfummky2x" path="res://assets/laughin/laughin_0008.png" id="24_yy4jg"]
+[ext_resource type="Texture2D" uid="uid://b8v1utq4silya" path="res://assets/laughin/laughin_0009.png" id="25_b1og7"]
+[ext_resource type="Texture2D" uid="uid://cph5jnas1ie46" path="res://assets/laughin/laughin_0010.png" id="26_bvjg7"]
+[ext_resource type="Texture2D" uid="uid://dgh5m62ayh58" path="res://assets/laughin/laughin_0012.png" id="27_yk2jx"]
+[ext_resource type="Texture2D" uid="uid://c4fwrnbqmd41o" path="res://assets/laughin/laughin_0014.png" id="28_hla36"]
+[ext_resource type="Texture2D" uid="uid://byhkweh4133xn" path="res://assets/angry/angry_0001.png" id="29_2dw3y"]
+[ext_resource type="Texture2D" uid="uid://b217fpl5klwbt" path="res://assets/angry/angry_0002.png" id="30_0fj5x"]
+[ext_resource type="Texture2D" uid="uid://laijymxast31" path="res://assets/angry/angry_0004.png" id="31_ga2v0"]
+[ext_resource type="AudioStream" uid="uid://dyjt4c2e57ql2" path="res://assets/audio/hehehe.wav" id="34_xgirx"]
+[ext_resource type="AudioStream" uid="uid://rqchgi15lp1a" path="res://assets/audio/gross.wav" id="35_yvcbq"]
+[ext_resource type="AudioStream" uid="uid://25ijmiysqvt4" path="res://assets/audio/gagging-sounds-71325.wav" id="37_8j122"]
+[ext_resource type="Texture2D" uid="uid://btc7hxw861451" path="res://assets/border.png" id="38_o7qqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1frg"]
+size = Vector2(1575.94, 245.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3kwr"]
+size = Vector2(148, 288)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mjf5h"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lc83y"]
+animation = &"boredman"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oa2ks"]
+animation = &"cringing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8xn55"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5jx81"]
+animation = &"laughing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m5qq6"]
+animation = &"picking_up_phone"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qq5pe"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4w7hv"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pkn8t"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bsbeo"]
+priority = 0
+advance_mode = 2
+advance_condition = &"cringe"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bne5d"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jmwkp"]
+advance_mode = 2
+advance_condition = &"laughing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rucx4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lu4ja"]
+states/End/position = Vector2(901, 100)
+states/Start/position = Vector2(178, 100)
+states/boredman/node = SubResource("AnimationNodeAnimation_lc83y")
+states/boredman/position = Vector2(366, 100)
+states/cringing/node = SubResource("AnimationNodeAnimation_oa2ks")
+states/cringing/position = Vector2(915, -43)
+states/idle/node = SubResource("AnimationNodeAnimation_8xn55")
+states/idle/position = Vector2(781, 111)
+states/laughing/node = SubResource("AnimationNodeAnimation_5jx81")
+states/laughing/position = Vector2(754, -43)
+states/picking_up_phone/node = SubResource("AnimationNodeAnimation_m5qq6")
+states/picking_up_phone/position = Vector2(575, 153)
+transitions = ["Start", "boredman", SubResource("AnimationNodeStateMachineTransition_qq5pe"), "boredman", "picking_up_phone", SubResource("AnimationNodeStateMachineTransition_4w7hv"), "picking_up_phone", "idle", SubResource("AnimationNodeStateMachineTransition_pkn8t"), "idle", "cringing", SubResource("AnimationNodeStateMachineTransition_bsbeo"), "cringing", "idle", SubResource("AnimationNodeStateMachineTransition_bne5d"), "idle", "laughing", SubResource("AnimationNodeStateMachineTransition_jmwkp"), "laughing", "idle", SubResource("AnimationNodeStateMachineTransition_rucx4")]
+graph_offset = Vector2(17, -19)
+
+[sub_resource type="Animation" id="Animation_e8ifh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_muasl")]
+}
+
+[sub_resource type="Animation" id="Animation_fsoqf"]
+resource_name = "boredman"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_t0qnh")]
+}
+
+[sub_resource type="Animation" id="Animation_dlup1"]
+resource_name = "cringing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("29_2dw3y"), ExtResource("30_0fj5x"), ExtResource("31_ga2v0"), ExtResource("30_0fj5x"), ExtResource("29_2dw3y")]
+}
+
+[sub_resource type="Animation" id="Animation_fvbf4"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_31at2"), ExtResource("19_fkr4p"), ExtResource("18_31at2")]
+}
+
+[sub_resource type="Animation" id="Animation_3iqsd"]
+resource_name = "laughing"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_t1cic"), ExtResource("21_kprov"), ExtResource("22_qlitr"), ExtResource("23_dsuho"), ExtResource("24_yy4jg"), ExtResource("25_b1og7"), ExtResource("26_bvjg7"), ExtResource("27_yk2jx"), ExtResource("28_hla36"), ExtResource("22_qlitr"), ExtResource("21_kprov"), ExtResource("20_t1cic")]
+}
+
+[sub_resource type="Animation" id="Animation_ty5u0"]
+resource_name = "picking_up_phone"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_t0qnh"), ExtResource("15_hlym8"), ExtResource("16_b8fgt"), ExtResource("17_bl6hp")]
+}
+
+[sub_resource type="Animation" id="Animation_y7iyr"]
+resource_name = "put_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_bl6hp"), ExtResource("16_b8fgt"), ExtResource("15_hlym8"), ExtResource("14_t0qnh")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lre4a"]
+_data = {
+"RESET": SubResource("Animation_e8ifh"),
+"boredman": SubResource("Animation_fsoqf"),
+"cringing": SubResource("Animation_dlup1"),
+"idle": SubResource("Animation_fvbf4"),
+"laughing": SubResource("Animation_3iqsd"),
+"picking_up_phone": SubResource("Animation_ty5u0"),
+"put_down": SubResource("Animation_y7iyr")
+}
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="Icon2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(633.498, 171.501)
+scale = Vector2(26.6953, 17.9922)
+texture = ExtResource("1_et34b")
+
+[node name="Bg" type="Sprite2D" parent="."]
+modulate = Color(0.160784, 0.219608, 0.227451, 0.92549)
+position = Vector2(74, -59)
+scale = Vector2(5, 5)
+texture = ExtResource("2_b50h3")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -25)
+tile_set = ExtResource("9_irh8n")
+format = 2
+layer_0/tile_data = PackedInt32Array(65541, 0, 2, 65540, 0, 2, 65539, 0, 2, 65538, 0, 2, 65537, 0, 2, 131073, 0, 2, 131072, 0, 2, 196607, 0, 2, 196606, 0, 2, 131070, 0, 2, 131069, 0, 2, 196604, 0, 2, 196603, 0, 2, 196602, 0, 2, 196601, 0, 2, 131065, 0, 2, 131066, 0, 2, 131067, 0, 2, 131068, 0, 2, 131071, 0, 2, 65536, 0, 2, 196605, 0, 2, 131076, 0, 2, 131077, 0, 2, 131075, 0, 2, 131074, 0, 2, 262137, 0, 3, 262138, 0, 3, 262139, 0, 3, 262140, 0, 3, 262141, 0, 3, 262142, 0, 3, 262143, 0, 3, 196608, 0, 3, 196609, 0, 3, 196610, 0, 3, 196611, 0, 3, 196612, 0, 3, 196613, 0, 3, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -7, 0, 1, -6, 0, 1, -5, 0, 1, -4, 0, 1, -3, 0, 1, -2, 0, 1, -1, 0, 1, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -65533, 0, 1, -65532, 0, 1, -65531, 0, 1)
+
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("upper", "lower", "score_disp", "wrong_disp")]
+script = ExtResource("8_i4vhg")
+upper = NodePath("../Upper")
+lower = NodePath("../Lower")
+score_disp = NodePath("../FunnyLabel")
+wrong_disp = NodePath("../UnfunnyLabel")
+
+[node name="Player" parent="." instance=ExtResource("1_qcx2g")]
+bob = ExtResource("2_7hg7o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(500, -52)
+zoom = Vector2(0.455, 0.455)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, -25)
+script = ExtResource("3_kyexl")
+speed = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-82.9688, 256.75)
+shape = SubResource("RectangleShape2D_x1frg")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -25)
+script = ExtResource("3_kyexl")
+speed = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-87.5625, -257)
+shape = SubResource("RectangleShape2D_x1frg")
+
+[node name="spawning" type="Node2D" parent="." node_paths=PackedStringArray("spawn_places")]
+position = Vector2(0, -25)
+script = ExtResource("5_obxhx")
+spawnables = Array[PackedScene]([ExtResource("6_8o70i"), ExtResource("4_hpl2t")])
+spawn_places = [NodePath("top"), NodePath("bottom")]
+
+[node name="top" type="Node2D" parent="spawning"]
+position = Vector2(-894, -240)
+
+[node name="bottom" type="Node2D" parent="spawning"]
+position = Vector2(-894, 240)
+
+[node name="Upper" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "game_manager")]
+position = Vector2(1049, -265)
+script = ExtResource("7_t8002")
+acc_type = true
+sprite = NodePath("../Boreman")
+game_manager = NodePath("../GameManager")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Upper"]
+position = Vector2(-256, 0)
+shape = SubResource("RectangleShape2D_a3kwr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Upper"]
+stream = ExtResource("12_08kn3")
+volume_db = -28.045
+
+[node name="Lower" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "game_manager")]
+position = Vector2(1049, 215)
+script = ExtResource("7_t8002")
+sprite = NodePath("../Boreman")
+game_manager = NodePath("../GameManager")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lower"]
+position = Vector2(-256, 0)
+shape = SubResource("RectangleShape2D_a3kwr")
+
+[node name="Show" type="Sprite2D" parent="."]
+top_level = true
+z_index = 100
+position = Vector2(748, -310)
+texture = ExtResource("10_3lv3n")
+
+[node name="Trash" type="Sprite2D" parent="."]
+top_level = true
+z_index = 100
+position = Vector2(757, 200)
+texture = ExtResource("11_dk85m")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1512, 1231)
+texture = SubResource("ViewportTexture_mjf5h")
+
+[node name="Boreman" type="Sprite2D" parent="."]
+position = Vector2(1320, -49)
+texture = ExtResource("12_muasl")
+script = ExtResource("14_qxhd0")
+
+[node name="AnimationTree" type="AnimationTree" parent="Boreman"]
+tree_root = SubResource("AnimationNodeStateMachine_lu4ja")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/conditions/cringe = false
+parameters/conditions/laughing = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boreman"]
+libraries = {
+"": SubResource("AnimationLibrary_lre4a")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Boreman"]
+stream = ExtResource("34_xgirx")
+
+[node name="disgusted" type="AudioStreamPlayer2D" parent="Boreman"]
+stream = ExtResource("35_yvcbq")
+
+[node name="phoneturnon" type="AudioStreamPlayer2D" parent="Boreman"]
+stream = ExtResource("37_8j122")
+autoplay = true
+
+[node name="UnfunnyLabel" type="Label" parent="."]
+offset_left = 977.0
+offset_top = -532.0
+offset_right = 1596.0
+offset_bottom = -440.0
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="FunnyLabel" type="Label" parent="."]
+offset_left = 975.0
+offset_top = -608.0
+offset_right = 1594.0
+offset_bottom = -516.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "Watching Videos..."
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(916, -19)
+scale = Vector2(1, 1.529)
+texture = ExtResource("38_o7qqj")
+
+[node name="thought" parent="." instance=ExtResource("6_8o70i")]
+position = Vector2(-475, -272)
+
+[connection signal="body_entered" from="Upper" to="Upper" method="_on_body_entered"]
+[connection signal="body_entered" from="Lower" to="Lower" method="_on_body_entered"]
